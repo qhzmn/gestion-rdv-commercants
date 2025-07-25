@@ -1,0 +1,178 @@
+.toggle-switch {
+  text-align: right;
+  margin: 20px;
+}
+
+.toggle-switch a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #f07276;
+  color: #f07276;
+  text-decoration: none;
+  border-radius: 20px 0 0 20px;
+  margin-left: -5px;
+}
+
+.toggle-switch a:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
+.toggle-switch a.active {
+  background-color: #f07276;
+  color: white;
+}
+.headerhome-container h1{
+  text-align: center;
+  
+}
+.fc-day {
+  background-color: rgb(253, 242, 255);
+}
+
+.fc-day-today {
+  background-color: #ffe8e8 !important; /* rouge foncé par exemple */
+}
+
+.fc .fc-button {
+  background-color: #eee;
+  color: #302f2f;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 0 2px;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover */
+.fc .fc-button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Bouton actif (vue actuelle) */
+.fc .fc-button.fc-button-active {
+  background-color: crimson;
+  color: white;
+  border-color: rgb(117, 93, 98);
+}
+
+/* modal.css */
+
+/* Le fond sombre couvrant tout l'écran */
+.modal {
+  display: none; /* caché par défaut */
+  position: fixed; /* position fixe pour rester à l'écran */
+  z-index: 1000; /* au-dessus de tout */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* pour scroll si contenu trop grand */
+  background-color: rgba(0, 0, 0, 0.5); /* fond noir transparent */
+}
+
+/* Contenu du modal */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* centré verticalement et horizontalement */
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Bouton fermer */
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#closeModal:hover,
+#closeModal:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Titres et textes */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+.modal-content p {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+@media (max-width: 768px) {
+  .toggle-switch {
+    margin: 20px;
+  }
+
+  
+
+
+  .headerhome-container h1 {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 20% auto;
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+  }
+
+  .modal-content p {
+    font-size: 13px;
+  }
+
+  #closeModal {
+    font-size: 24px;
+    top: 5px;
+    right: 10px;
+  }
+
+
+
+  .fc-toolbar-title {
+    font-size: 16px !important;
+  }
+
+  .fc-col-header-cell-cushion, 
+  .fc-daygrid-day-number {
+    font-size: 12px;
+  }
+  .fc-header-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .fc-button-group {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .fc .fc-button {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px;
+    font-size: 13px;
+  }
+}

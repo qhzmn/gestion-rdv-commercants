@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Trouve ton stage{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/assets/css/list.css">
+
+
+<div class="list-container">
+<h1>Liste des clients</h1>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}{% if succes %}
+        <div class="succes">{{ succes }}</div>
+    {% endif %}{% endif %}
+    <div class="btn-add-container">
+  <a href="/client/add?return=client/view" id="addClientBtn" class="btn-add">
+    ➕ Ajouter un client
+  </a>
+</div>
+
+
+    {% if clients is empty %}
+        <p class="no-data">Aucun client trouvé.</p>
+    {% else %}
+        <table class="client-table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Téléphone</th>
+                    <th>Dernière visite</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                
+                <tr>
+                    <td>{{ client.last_name }}</td>
+                    <td>{{ client.first_name }}</td>
+                    <td>{{ client.phone }}</td>
+                    <td>{{ client.last_purchase }}</td>
+                    <td>
+                        <form action="/client/delete" method="POST" onsubmit="return confirm('Supprimer ce client et tout les RDV associés ?');" style="display:inline;">
+                            <input type="hidden" name="id_client" value="{{ client.id_client }}">
+                            <button type="submit" class="btn-delete">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>     
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}

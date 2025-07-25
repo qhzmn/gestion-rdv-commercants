@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Liste des tâches{% endblock %}
+    
+{% block content %}
+<link rel="stylesheet" href="/assets/css/list.css">
+<link rel="stylesheet" href="/assets/css/home.css">
+
+
+<div class="headerhome-container">
+    
+    <div class="toggle-switch">
+    <a href="/" class="toggle-option">Calendrier</a>
+    <a href="/list" class="toggle-option active">Liste</a>
+    </div>
+
+<div class="list-container">
+  <h1>Liste des rendez-vous</h1>
+
+  <div class="btn-add-container">
+    <a href="/appointment/add?return=appointment/list" id="addClientBtn" class="btn-add">
+      ➕ Ajouter un rdv
+    </a>
+  </div>
+
+  {% if events is empty %}
+    <p class="no-data">Aucun rendez-vous trouvé.</p>
+  {% else %}
+    <table class="client-table">
+      <thead>
+        <tr>
+          <th>Date début</th>
+          <th>Date fin</th>
+          <th>Client</th>
+          <th>Téléphone</th>
+          <th>Préstation</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in events %}
+        <tr>
+          <td>{{ event.start|date('d/m/Y H:i') }}</td>
+          <td>{{ event.end|date('d/m/Y H:i') }}</td>
+          <td>{{ event.name_client }}</td>
+          <td>{{ event.phone_client }}</td>
+          <td>{{ event.title }}</td>
+          <td>
+            <form action="/client/delete" method="POST" onsubmit="return confirm('Supprimer ce RDV ?');" style="display:inline;">
+              <input type="hidden" name="id_client" value="{{ client.id_client }}">
+              <button type="submit" class="btn-delete">Supprimer</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>     
+  {% endif %}
+</div>
+
+
+
+    
+{% endblock %}
+

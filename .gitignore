@@ -1,0 +1,7 @@
+# Dossiers à ignorer
+/config/
+/vendor/
+
+# Fichiers à ignorer
+composer.json
+composer.lock

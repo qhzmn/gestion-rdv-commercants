@@ -1,0 +1,121 @@
+.list-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow-x: auto; /* Permet de scroller horizontalement si besoin */
+}
+
+.btn-add-container {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.btn-add:hover {
+  background-color: #e5ebff;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  min-width: 600px; /* pour forcer scroll sur petit écran */
+}
+
+.client-table th,
+.client-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+.client-table th {
+  background-color: #f2f2f2;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.no-data {
+  font-style: italic;
+  color: #777;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-add {
+  display: inline-block;
+  background-color: #7ab4f3;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 768px) {
+  .list-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .btn-add-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-add {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .client-table {
+    min-width: 100%; /* pour que la table ne dépasse pas la largeur */
+    font-size: 14px;
+  }
+
+  .client-table th,
+  .client-table td {
+    padding: 0.5rem 0.4rem;
+  }
+
+  .btn-delete {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-table {
+    font-size: 13px;
+  }
+
+  .btn-delete {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .btn-add {
+    width: auto;         /* largeur automatique selon contenu */
+    padding: 0.5rem 1rem; /* un peu moins de padding */
+    font-size: 0.9rem;    /* texte un peu plus petit */
+    display: inline-block; /* évite le 100% width */
+  }
+}

@@ -1,0 +1,56 @@
+
+
+
+
+.client-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+.no-client {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}
+
+.client-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.client-table thead {
+    background-color: #f0f0f0;
+}
+
+.client-table th,
+.client-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.client-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+

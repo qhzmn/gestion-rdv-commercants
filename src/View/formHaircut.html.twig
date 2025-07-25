@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendrier{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="/assets/css/formHaircut.css">
+
+
+
+<div class="form-container">
+  <form action="/appointment/add" method="POST" id="myForm">
+
+  
+
+    <!-- ÉTAPE 1 : Choix du client -->
+    <div class="step" id="step1">
+      {% if clients is not empty %}
+        <label for="client">Choisissez un client :</label>
+        <select name="client" id="client" required>
+          <option value=""
+            {% if selected_client is not defined or selected_client == '' or selected_client == 0 %}selected{% endif %}>
+            -- Choisir --
+          </option>
+          {% for client in clients %}
+            <option value="{{ client.id_client }}"
+              {% if selected_client is defined and client.id_client == selected_client %}selected{% endif %}>
+              {{ client.first_name }} {{ client.last_name }}
+            </option>
+          {% endfor %}
+        </select>
+      {% else %}
+        <p class="no-client">Aucun client enregistré.</p>
+      {% endif %}
+
+      <a href="/client/add?return=appointment/add" class="btn-add">➕ Ajouter un client</a>
+      <div class="step-nav">
+        <button type="button" class="btn" id="next1">Suivant</button>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 2 : Type de rendez-vous -->
+    <div class="step" id="step2" style="display:none">
+      <label for="type">Choisissez un type de rendez-vous :</label>
+      <select id="type" name="type" required>
+        <option value="">-- Choisir --</option>
+        <option value="homme">Homme</option>
+        <option value="femme">Femme</option>
+      </select>
+      <div class="error">{{ error }}</div>
+
+      <div id="extraFields"></div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-secondary" id="prev2">Précédent</button>
+        <button type="button" class="btn" id="next2">Suivant</button>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 3 : Date & Heure -->
+    <div class="step" id="step3" style="display:none">
+      <label for="date">Date du rendez-vous :</label>
+      <input type="date" id="date" name="date" required value="{{ date|default('') }}">
+
+      <label for="time">Heure du rendez-vous :</label>
+      <input type="time" id="time" name="time" required value="{{ time|default('') }}">
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-secondary" id="prev3">Précédent</button>
+        <button type="submit" class="btn btn-submit">Envoyer</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+<script src="/assets/js/form-dynamic.js"></script>
+
+{% endblock %}

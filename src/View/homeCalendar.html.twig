@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Calendrier{% endblock %}
+    
+{% block content %}
+<link rel="stylesheet" href="/assets/css/home.css">
+
+<div class="headerhome-container">
+    
+    <div class="toggle-switch">
+    <a href="/" class="toggle-option active">Calendrier</a>
+    <a href="/list" class="toggle-option">Liste</a>
+    </div>
+
+<h1>Calendrier des Rendez-vous</h1>
+</div>
+{% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}{% if succes %}
+        <div class="succes">{{ succes }}</div>
+    {% endif %}{% endif %}
+    <div id="calendar" data-events='{{ events | json_encode | e('html_attr') }}'></div>
+
+
+<!-- Modal (caché par défaut) -->
+<div id="rdvModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p><strong>Nom du client :</strong> <span id="modalNameClient"></span></p>
+    <p><strong>Téléphone du client :</strong> <span id="modalPhoneClient"></span></p>
+    <p><strong>Fait par :</strong> <span id="modalUser"></span></p>
+    <p><strong>Date début :</strong> <span id="modalDateStart"></span></p>
+    <p><strong>Date fin :</strong> <span id="modalDateEnd"></span></p>
+    <button id="editEventBtn">Modifier</button>
+    <button id="deleteEventBtn" data-id="">Supprimer</button>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="/assets/js/calendar.js"></script>
+{% endblock %}
+

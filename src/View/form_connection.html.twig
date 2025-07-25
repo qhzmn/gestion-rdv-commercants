@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'identifier</title>
+    <link rel="stylesheet" href="assets/css/connection.css">
+        <link rel="stylesheet" href="assets/css/erreurs.css">
+        <link rel="icon" href="assets/image/logo.ico" type="image/x-icon">
+
+</head>
+<body id="page">
+<div class="container_login">
+    <div class="left">
+    
+        <img src="assets/image/image_connexion.jpg" alt="Image de connexion">
+    </div>
+    <div class="right">
+        <h1>Se connecter</h1>
+        <h2>Se connecter pour continer</h2>
+        
+        <form id="loginForm" method="POST">
+            <label for="username">VEUILLEZ SASIE VOTRE E-MAIL</label>
+            <input type="text" id="username" name="username" required>
+            <div class="errorInput" id="emailError"></div>
+            <br>
+            <label for="password">VEUILLEZ SASIE VOTRE MOT DE PASSE</label>
+            <input type="password" id="password" name="password" required>
+            <div class="errorInput" id="passwordError"></div>
+            <br>
+            
+            <button type="submit">Se connecter</button>
+            {% if error %}
+                <div class="errorInput">{{ error }}</div>
+            {% endif %}
+        </form>
+    </div>
+</div>
+    <script src="assets/js/login_validation.js"></script>
+
+</body>
+</html>
+

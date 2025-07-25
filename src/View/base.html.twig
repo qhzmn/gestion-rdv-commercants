@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Coiffure{% endblock %}</title>
+    <link rel="icon" href="/assets/image/logo.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/erreurs.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+
+
+    
+
+
+
+
+</head>
+<body>
+<nav>
+    <div class="logo">
+        <a href="/">
+            <img src="/assets/image/logo.png" alt="Logo du site">
+        </a>
+    </div>
+
+    <button id="openBtn" aria-label="Ouvrir menu">
+        ☰
+    </button>
+
+    <ul id="mySidenav" class="nav-links" aria-hidden="true">
+        <button id="closeBtn" class="close" aria-label="Fermer menu">&times;</button>
+        <li><a href="/" class="{% if currentPath == '/' %}pageActive{% endif %}">Accueil</a></li>
+        <li><a href="/client/view" class="{% if currentPath starts with '/client/view' %}pageActive{% endif %}">Mes clients</a></li>
+        <li><a href="/appointment/add" class="{% if currentPath starts with '/appointment/add' %}pageActive{% endif %}">Nouveau rdv</a></li>
+        <li><a href="/logout" class="{% if currentPath == '/logout' %}pageActive{% endif %}" onclick="return confirm('Es-tu sûr de vouloir te déconnecter ?')">Déconnexion</a></li>
+    </ul>
+</nav>
+
+    {% block content %}
+{% endblock %}
+
+<footer>
+  <div class="footer-container">
+    <ul class="footer-links">
+      <li>
+        <a href="/mentions" class="{% if app.request.pathinfo == '/mentions' %}pageActive{% endif %}">
+          Mentions légales
+        </a>
+      </li>
+      <li>
+        <a href="/politique" class="{% if app.request.pathinfo == '/politique' %}pageActive{% endif %}">
+          Politique de confidentialité
+        </a>
+      </li>
+    </ul>
+  </div>
+  <p class="copyright">© 2025 Mon Site. Tous droits réservés.</p>
+</footer>
+
+            <script src="/assets/js/burger.js"></script>
+
+</body>
+</html>
