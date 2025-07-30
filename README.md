@@ -1,66 +1,87 @@
-\# Calendrier Coiffeuse 💇‍♀️
+# 💇‍♀️ Calendrier Coiffeuse – Application de gestion de rendez-vous
 
+Ce projet est une application web conçue pour permettre à une coiffeuse de gérer ses rendez-vous de manière simple et visuelle via une interface calendrier.  
+Elle peut facilement planifier ses prestations, gérer ses clientes, et visualiser son emploi du temps selon différents modes (jour, semaine, mois).
 
-
-Application web pour la gestion des rendez-vous d'une coiffeuse avec une interface calendrier.
-
-
-
----
-
-
-
-\## Fonctionnalités
-
-
-
-\- Affichage du planning en vue mensuelle, hebdomadaire et journalière (via FullCalendar)
-
-\- Gestion des rendez-vous avec sélection de la prestation (temps calculé automatiquement)
-
-\- Intégration d'une base de données clients
-
-\- Architecture MVC avec PHP et moteur de templates Twig
-
-\- Ajout, modification et suppression des rendez-vous
-
-
+> 📌 Ce projet a été développé en prenant **l'exemple d'une coiffeuse**, mais peut facilement être adapté à d'autres commerçants ou indépendants (esthéticiennes, thérapeutes, barbiers, etc.)
 
 ---
 
+## ✨ Fonctionnalités principales
 
-
-\## Technologies utilisées
-
-
-
-\- HTML / CSS / JavaScript (FullCalendar)
-
-\- PHP (backend)
-
-\- Twig (templates)
-
-\- Modèle MVC pour structurer le code
-
-\- Base de données MySQL pour stocker clients et rendez-vous
-
-
+- **Vue calendrier interactive** avec FullCalendar (vue jour, semaine, mois)  
+- **Ajout d’un rendez-vous** avec sélection de la prestation  
+- **Base de données clients** intégrée (ajout/modification d’un client avec ses coordonnées)  
+- **Modification et suppression** de rendez-vous existants  
+- **Calcul automatique de la durée** selon la prestation sélectionnée  
+- **Interface fluide et responsive** (utilisable sur mobile/tablette)  
 
 ---
 
+## 🧱 Architecture du projet
+
+Ce projet suit le **modèle MVC (Modèle-Vue-Contrôleur)** en PHP, pour une meilleure séparation des responsabilités :
+
+- **Modèles** : interaction avec la base de données (clients, prestations, rendez-vous)  
+- **Vues** : templates Twig affichant les données (HTML/CSS)  
+- **Contrôleurs** : logique métier (gestion des requêtes, traitement des actions)  
+
+---
+
+## 🛠️ Technologies utilisées
+
+| Type            | Outils/Librairies utilisés           |
+|-----------------|------------------------------------|
+| Frontend        | HTML, CSS, JavaScript, FullCalendar |
+| Backend         | PHP                                |
+| Template Engine | Twig                               |
+| Base de données | MySQL                              |
+| Structure       | MVC                                |
+
+---
+
+## ⚙️ Installation locale
+
+Voici les étapes pour installer et faire fonctionner le projet en local sur votre machine.
+
+---
+
+### 1. Cloner le dépôt
+
+Ouvre un terminal puis exécute :
+
+```bash
+git clone https://github.com/TON-UTILISATEUR/calendrier-coiffeuse.git
+cd calendrier-coiffeuse
+```
+
+### 2. Créer la base de données MySQL
+
+Crée une base de données selon ta configuration. Si tu modifies le nom ou les paramètres, n’oublie pas d’ajuster la configuration du projet.
+
+### 3. Paramétrer la connexion à la base de données
+
+Modifie le fichier suivant avec les informations de ta base de données :
+
+```bash
+/config/database.php
+```
+
+### 4. Configurer le serveur Apache
+
+Assure-toi que ton serveur Apache est configuré pour que le dossier `public/` soit la racine du site, et que `index.php` oit le fichier d’entrée par défaut. 
+Cela permettra d’accéder correctement à l’application via l’URL : `http://localhost/calendrier/public`.
 
 
-\## Installation
 
 
 
-1\. Clone le dépôt :
 
-&nbsp;  ```bash
 
-&nbsp;  git clone https://github.com/TON-UTILISATEUR/calendrier-coiffeuse.git
 
-&nbsp;  cd calendrier-coiffeuse
+
+
+
 
 
 
