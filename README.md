@@ -51,7 +51,7 @@ Voici les étapes pour installer et faire fonctionner le projet en local sur vot
 Ouvre un terminal puis exécute :
 
 ```bash
-git clone https://github.com/TON-UTILISATEUR/calendrier-coiffeuse.git
+git clone https://github.com/TON-UTILISATEUR/gestion-rdv-commercants.git
 cd calendrier-coiffeuse
 ```
 
@@ -61,10 +61,10 @@ Crée une base de données selon ta configuration. Si tu modifies le nom ou les 
 
 ### 3. Paramétrer la connexion à la base de données
 
-Modifie le fichier suivant avec les informations de ta base de données :
+Modifie le fichier suivant avec les informations de ta base de données, il faut le renommer en `database.php` :
 
 ```bash
-/config/database.php
+/config/database_exemple.php
 ```
 
 ### 4. Configurer le serveur Apache
