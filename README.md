@@ -1,9 +1,9 @@
 # 💇‍♀️ Calendrier Coiffeuse – Application de gestion de rendez-vous
 
-Ce projet est une application web conçue pour permettre à une coiffeuse de gérer ses rendez-vous de manière simple et visuelle via une interface calendrier.  
-Elle peut facilement planifier ses prestations, gérer ses clientes, et visualiser son emploi du temps selon différents modes (jour, semaine, mois).
+Ce projet est une application web conçue pour permettre à un commerçant de gérer ses rendez-vous de manière simple et visuelle via une interface calendrier.  
+Elle peut facilement planifier ses prestations, gérer sa clientèle , et visualiser son emploi du temps selon différents modes (jour, semaine, mois).
 
-> 📌 Ce projet a été développé en prenant **l'exemple d'une coiffeuse**, mais peut facilement être adapté à d'autres commerçants ou indépendants (esthéticiennes, thérapeutes, barbiers, etc.)
+> 📌 Ce projet a été développé en prenant **l'exemple d'un(e) coiffeur/coiffeuse**, mais peut facilement être adapté à d'autres commerçants ou indépendants (esthéticiennes, thérapeutes, barbiers, etc.)
 
 ---
 
@@ -69,7 +69,7 @@ Modifie le fichier suivant avec les informations de ta base de données, il faut
 
 ### 4. Configurer le serveur Apache
 
-Assure-toi que ton serveur Apache est configuré pour que le dossier `public/` soit la racine du site, et que `index.php` oit le fichier d’entrée par défaut. 
+Assure-toi que ton serveur Apache est configuré pour que le dossier `public/` soit la racine du site, et que `index.php` soit le fichier d’entrée par défaut. 
 Cela permettra d’accéder correctement à l’application via l’URL : `http://localhost/calendrier/public`.
 
 
